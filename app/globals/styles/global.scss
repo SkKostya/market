@@ -1,0 +1,18 @@
+@layer reset, defaults, framework, components, pages, utilities, overrides;
+
+@layer reset {
+  @import './reset';
+}
+
+@layer defaults {
+  @import './constants';
+
+  * {
+    box-sizing: border-box;
+    color: var(--main-color);
+  }
+
+  body {
+    background-color: var(--main-background);
+  }
+}
