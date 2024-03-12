@@ -5,6 +5,7 @@
     "stylelint-prettier/recommended"
   ],
   "rules": {
+    "color-function-notation": "legacy",
     "prettier/prettier": [
       true,
       {

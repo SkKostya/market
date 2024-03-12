@@ -1,0 +1,79 @@
+@layer pages {
+  .auth-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    background-image: var(--auth-background);
+    background-position: center;
+    background-size: cover;
+
+    &__window {
+      width: 100%;
+      max-width: 460px;
+      padding: 6px;
+      background-color: rgba(var(--main-background-rgb), 0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      box-shadow: 0 0 10px -1px var(--dark-background);
+    }
+
+    &__content {
+      max-height: 85dvh;
+      overflow-y: auto;
+    }
+  }
+
+  .auth-form {
+    padding: 16px;
+
+    &__title {
+      padding-bottom: 12px;
+      text-shadow: 0 0 5px var(--neutral-color);
+    }
+
+    &__field {
+      margin-top: 12px;
+      background-color: rgba(var(--input-background-rgb), 0.5);
+    }
+
+    &__submit {
+      margin-top: 32px;
+    }
+
+    &__link {
+      display: block;
+      width: max-content;
+      margin-top: 12px;
+      margin-left: auto;
+      font-size: 14px;
+      color: var(--neutral-color);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  html[data-theme='light'] {
+    .auth-form {
+      &__field {
+        border-color: rgba(var(--dark-background-rgb), 0.7);
+      }
+
+      &__link {
+        color: var(--neutral-color);
+      }
+
+      &__submit {
+        background-color: rgba(var(--light-background-rgb), 0.6);
+      }
+    }
+  }
+
+  html[data-theme='dark'] {
+    .auth-form {
+      &__link {
+        color: var(--main-color);
+      }
+    }
+  }
+}

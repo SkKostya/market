@@ -24,6 +24,7 @@
       "@/app/*": ["app/*"],
       "@/globals/*": ["app/globals/*"],
       "@/store/*": ["app/globals/store/*"],
+      "@/shared/*": ["app/globals/shared/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

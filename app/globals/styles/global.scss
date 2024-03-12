@@ -1,18 +1,23 @@
-@layer reset, defaults, framework, components, pages, utilities, overrides;
+@layer reset, defaults, frameworks, components, pages, utilities, overrides;
 
 @layer reset {
   @import './reset';
 }
 
-@layer defaults {
-  @import './constants';
+@import './constants';
 
+@layer components {
+  @import '../shared/ui/import';
+}
+
+@layer defaults {
   * {
     box-sizing: border-box;
     color: var(--main-color);
   }
 
   body {
+    font-family: system-ui, sans-serif;
     background-color: var(--main-background);
   }
 }

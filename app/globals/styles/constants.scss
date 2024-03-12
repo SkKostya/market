@@ -55,6 +55,8 @@ html[data-theme='light'] {
   @include define-color-rgb(--light-gray-background, 236, 242, 245); // #ecf2f5
   @include define-color-rgb(--input-background, 249, 249, 249); // #f9f9f9
   @include define-color-rgb(--input-white, 255, 255, 255); // #ffffff
+
+  --auth-background: url('/images/auth/auth-bg-light.jpg');
 }
 
 html[data-theme='dark'] {
@@ -77,18 +79,6 @@ html[data-theme='dark'] {
   @include define-color-rgb(--light-gray-background, 140, 144, 146); // #8c9092
   @include define-color-rgb(--input-background, 24, 24, 24); // #181818
   @include define-color-rgb(--input-white, 44, 44, 44); // #2c2c2c
-}
 
-// Media Queries Values
-$mobile-sm: 320px; // mobile
-$mobile-md: 380px;
-$mobile-lg: 480px;
-$tablet-sm: 560px; // tablet
-$tablet-md: 640px;
-$tablet-lg: 764px;
-$laptop-sm: 860px; // laptop
-$laptop-md: 940px;
-$laptop-lg: 1000px;
-$screen-sm: 1140px; // screen
-$screen-md: 1260px;
-$screen-lg: 1380px;
+  --auth-background: url('/images/auth/auth-bg-dark.jpg');
+}
