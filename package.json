@@ -9,7 +9,7 @@
     "lint": "next lint",
     "lint:fix-css": "npx stylelint \"**/*.(css|scss|sass)\" --fix",
     "prettier:fix": "prettier --write --ignore-unknown",
-    "prepare": "npx husky install && npx husky add .husky/pre-commit \"npx lint-staged\""
+    "prepare": "npx husky install && npx husky add .husky/pre-commit \"npm run lint && npx lint-staged\""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
@@ -46,13 +46,10 @@
     }
   },
   "lint-staged": {
-    "./**/*.{ts,tsx,js,jsx}": [
-      "num run lint"
-    ],
     "./**/*.{css,scss,sass}": [
       "npm run lint:fix-css"
     ],
-    "*": [
+    "./**/*": [
       "npm run prettier:fix"
     ]
   }

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Formik } from 'formik'
 
 import { ROUTES } from '@/app/globals/routes'
-import Input from '@/app/globals/shared/ui/input'
+import { Input } from '@/app/globals/shared/ui/client.index'
 
 export default function Login() {
   return (
