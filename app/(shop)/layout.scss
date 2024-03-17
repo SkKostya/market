@@ -1,6 +1,12 @@
-.layout {
-  display: grid;
-  grid-template-rows: 72px 1fr 120px;
-  grid-template-columns: 1;
-  min-height: 100dvh;
+@layer components {
+  @import './entities/import';
+}
+
+@layer pages {
+  .layout {
+    display: grid;
+    grid-template-rows: 72px 1fr 120px;
+    grid-template-columns: 1;
+    min-height: 100dvh;
+  }
 }

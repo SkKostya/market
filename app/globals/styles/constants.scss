@@ -40,7 +40,7 @@ html[data-theme='light'] {
   @include define-color-rgb(--error-color, 244, 31, 69); // #f41f45
   @include define-color-rgb(--warning-color, 242, 153, 74); // #f2994a
   @include define-color-rgb(--disabled-color, 204, 204, 204); // #cccccc
-  @include define-color-rgb(--border, 229, 229, 229); // #e5e5e5
+  @include define-color-rgb(--border, 200, 200, 200); // #c8c8c8
   @include define-color-rgb(--main-background, 249, 249, 249); // #f9f9f9
   @include define-color-rgb(--secondary-background, 245, 245, 245); // #f5f5f5
   @include define-color-rgb(--light-background, 255, 255, 255); // #ffffff

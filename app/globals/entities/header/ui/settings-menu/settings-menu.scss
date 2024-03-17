@@ -1,0 +1,174 @@
+.settings-menu {
+  $border-width: 1px;
+  $button-width: 46px;
+  $dropdown-margin: -16px;
+
+  position: relative;
+
+  &__button {
+    position: relative;
+    z-index: 1;
+    padding: $border-width;
+    overflow: hidden;
+    line-height: 0;
+    background-color: var(--main-background);
+    border-radius: 4px;
+    transition: border-radius 0.2s ease-in;
+
+    & > span {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: $button-width;
+      aspect-ratio: 1;
+      padding-bottom: 1px;
+      background-color: inherit;
+      border-radius: inherit;
+    }
+
+    &::after,
+    &::before {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      content: '';
+      background-color: var(--border);
+      transition: all 0.2s ease-in;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        calc(100% - $border-width) 100%,
+        calc(100% - $border-width) calc(100% - $border-width),
+        $border-width calc(100% - $border-width),
+        $border-width 100%,
+        0 100%
+      );
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover:not([data-opened='true']) {
+      &::before,
+      &::after {
+        width: calc(100% - $border-width);
+        height: 100%;
+      }
+    }
+
+    &[data-opened='true'] {
+      border-radius: 4px 4px 0 0;
+
+      &::before {
+        width: 100%;
+      }
+
+      &::after {
+        width: $border-width;
+      }
+
+      &::before,
+      &::after {
+        height: 100%;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--main-background);
+    border-radius: inherit;
+    transition: all 0.1s linear;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% - $border-width);
+    right: $dropdown-margin;
+    width: 220px;
+    padding: $border-width;
+    border-radius: 4px;
+    transform-origin: top;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(
+        calc(100% - $dropdown-margin - ($button-width / 2)) $border-width,
+        calc(100% - $dropdown-margin - ($button-width / 2)) $border-width,
+        calc(100% - $dropdown-margin - ($button-width / 2)) $border-width,
+        calc(100% - $dropdown-margin - ($button-width / 2)) $border-width
+      );
+      content: '';
+      background-color: var(--border);
+      border-radius: inherit;
+      transition: all 0.4s ease-in-out;
+    }
+
+    &[aria-expanded='true'] {
+      animation: fade-in 0.2s forwards;
+
+      &::before {
+        clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+      }
+    }
+
+    &[aria-expanded='false'] {
+      animation: fade-out 0.4s forwards;
+    }
+  }
+
+  &__link {
+    padding: 8px 16px;
+  }
+
+  &__logout {
+    color: var(--error-color);
+  }
+
+  &__footer {
+    padding-top: 12px;
+    margin-top: 6px;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  60% {
+    opacity: 1;
+  }
+
+  99% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}

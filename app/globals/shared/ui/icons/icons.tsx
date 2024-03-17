@@ -8,7 +8,7 @@ export const UserSettings = () => {
       focusable="false"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ fill: 'var(--main-color)' }}
+      style={{ fill: 'currentcolor' }}
       transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"
       strokeWidth="0.00014"
     >
@@ -17,7 +17,7 @@ export const UserSettings = () => {
         id="SVGRepo_tracerCarrier"
         strokeLinecap="round"
         strokeLinejoin="round"
-        style={{ stroke: 'var(--main-color)' }}
+        style={{ stroke: 'currentcolor' }}
         strokeWidth="0.16799999999999998"
       ></g>
       <g id="SVGRepo_iconCarrier">

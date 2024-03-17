@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ROUTES, SITE_MAP_MENU } from '@/globals/routes'
-import { Icons } from '@/globals/shared/ui/server.index'
+
+import { SettingsMenu } from './ui'
 
 interface IProps {}
 
@@ -23,7 +24,7 @@ const Header = ({}: IProps) => {
           <ul className="header__menu" role="list">
             {SITE_MAP_MENU.map((link) => (
               <li key={link.href}>
-                <Link className="header__link" href={link.href}>
+                <Link className="link header__link" href={link.href}>
                   {link.title}
                 </Link>
               </li>
@@ -31,9 +32,7 @@ const Header = ({}: IProps) => {
           </ul>
         </nav>
 
-        <button aria-label="User settings">
-          <Icons.UserSettings />
-        </button>
+        <SettingsMenu />
       </div>
     </header>
   )
