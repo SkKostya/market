@@ -1,0 +1,11 @@
+.products-page {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  padding-block: 32px;
+
+  &__sidebar {
+    border: 1px solid var(--border);
+  }
+}

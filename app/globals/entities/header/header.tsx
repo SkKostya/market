@@ -10,7 +10,7 @@ interface IProps {}
 const Header = ({}: IProps) => {
   return (
     <header className="header">
-      <div className="header__container">
+      <div className="header__container container">
         <Link href={ROUTES.products}>
           <Image
             src="/images/market-logo.png"

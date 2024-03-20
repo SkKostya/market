@@ -21,4 +21,16 @@
     font-family: system-ui, sans-serif;
     background-color: var(--main-background);
   }
+
+  .container {
+    width: min(1540px, calc(100% - 30px));
+    margin-inline: auto;
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+  }
 }

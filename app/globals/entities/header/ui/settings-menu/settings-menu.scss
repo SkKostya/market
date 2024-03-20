@@ -7,7 +7,7 @@
 
   &__button {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     padding: $border-width;
     overflow: hidden;
     line-height: 0;
@@ -17,7 +17,7 @@
 
     & > span {
       position: relative;
-      z-index: 1;
+      z-index: 10;
       display: grid;
       place-items: center;
       width: $button-width;
@@ -46,8 +46,8 @@
         100% 0,
         100% 100%,
         calc(100% - $border-width) 100%,
-        calc(100% - $border-width) calc(100% - $border-width),
-        $border-width calc(100% - $border-width),
+        calc(100% - $border-width) calc(100% - $border-width - 1px),
+        $border-width calc(100% - $border-width - 1px),
         $border-width 100%,
         0 100%
       );
@@ -97,6 +97,7 @@
     position: absolute;
     top: calc(100% - $border-width);
     right: $dropdown-margin;
+    z-index: 9;
     width: 220px;
     padding: $border-width;
     border-radius: 4px;
@@ -124,7 +125,7 @@
       animation: fade-in 0.2s forwards;
 
       &::before {
-        clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+        clip-path: polygon(-1% -1%, 101% -1%, 101% 101%, -1% 101%);
       }
     }
 
@@ -145,6 +146,22 @@
     padding-top: 12px;
     margin-top: 6px;
     border-top: 1px solid var(--border);
+  }
+
+  @media (width < calc(1540px + 30px)) {
+    &__dropdown {
+      right: 0;
+      border-top-right-radius: 0;
+
+      &::before {
+        clip-path: polygon(
+          100% $border-width,
+          100% $border-width,
+          100% $border-width,
+          100% $border-width
+        );
+      }
+    }
   }
 }
 
